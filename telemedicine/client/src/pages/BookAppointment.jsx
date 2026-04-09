@@ -58,6 +58,15 @@ export default function BookAppointment() {
           </div>
         </div>
 
+        {/* Notice about approval */}
+        <div style={{ background:'#eff6ff', border:'1px solid #bfdbfe', borderRadius:'12px', padding:'14px 18px', fontSize:'14px', color:'#1d4ed8', display:'flex', gap:'10px', alignItems:'flex-start' }}>
+          <span style={{ fontSize:'20px' }}>ℹ️</span>
+          <div>
+            <strong>How it works:</strong> After booking, the doctor reviews and accepts or rejects your appointment.
+            Payment is collected upfront — if the doctor rejects, a <strong>full refund</strong> is automatically initiated.
+          </div>
+        </div>
+
         {/* Form */}
         <form onSubmit={handleBook} style={{ background:'#fff', borderRadius:'20px', padding:'32px', boxShadow:'0 4px 16px rgba(0,0,0,0.06)', display:'flex', flexDirection:'column', gap:'24px' }}>
           <h2 style={{ fontSize:'22px', fontWeight:'700', color:'#1e293b' }}>Book Your Appointment</h2>

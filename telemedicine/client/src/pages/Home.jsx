@@ -25,7 +25,7 @@ export default function Home() {
       <div style={{ background: 'linear-gradient(135deg,#0ea5e9,#0284c7,#075985)', padding: '80px 60px', display: 'flex', gap: '60px', flexWrap: 'wrap', alignItems: 'center' }}>
         <div style={{ flex: 1, minWidth: '300px' }}>
           <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.15)', color: '#fff', padding: '6px 16px', borderRadius: '20px', fontSize: '13px', marginBottom: '20px' }}>
-            🏥 College Project
+            B.Tech. Final Year Project
           </div>
           <h1 style={{ fontSize: '52px', fontWeight: '800', color: '#fff', lineHeight: '1.1', marginBottom: '20px' }}>
             Healthcare at Your<br /><span style={{ color: '#bae6fd' }}>Fingertips</span>
@@ -53,7 +53,7 @@ export default function Home() {
             <div style={{ display: 'flex', gap: '14px', alignItems: 'center', marginBottom: '16px' }}>
               <div style={{ fontSize: '40px', background: '#e0f2fe', borderRadius: '50%', padding: '10px', width: '64px', height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>👨‍⚕️</div>
               <div>
-                <div style={{ fontWeight: '700', color: '#1e293b' }}>Dr. Kritika Sharma</div>
+                <div style={{ fontWeight: '700', color: '#1e293b' }}>Dr. Rajesh Sharma</div>
                 <div style={{ fontSize: '13px', color: '#64748b' }}>General Physician • 12 yrs</div>
                 <div style={{ fontSize: '13px', color: '#22c55e', fontWeight: '600' }}>🟢 Available Now</div>
               </div>
@@ -113,7 +113,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <div style={{ background: '#0f172a', color: 'rgba(255,255,255,0.5)', padding: '24px', textAlign: 'center', fontSize: '13px', lineHeight: '1.8' }}>
-        <p>LinkedMed-A Telemedicine Platform For Remote Consultation</p>
+        <p>Telemedicine Platform For Remote Consultation</p>
         <p>Kritika Sharma • Saket Juneja • Vanshaj Goel | SRMS College, Bareilly</p>
       </div>
     </div>

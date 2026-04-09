@@ -35,7 +35,7 @@ export default function Register() {
         <div style={{ textAlign:'center', marginBottom:'32px' }}>
           <div style={{ fontSize:'48px', marginBottom:'12px' }}>🏥</div>
           <h1 style={{ fontSize:'28px', fontWeight:'800', color:'#1e293b', marginBottom:'8px' }}>Create Account</h1>
-          <p style={{ fontSize:'15px', color:'#64748b' }}>Register as a patient on TeleMed</p>
+          <p style={{ fontSize:'15px', color:'#64748b' }}>Register as a patient on LinkedMed</p>
         </div>
 
         <form onSubmit={handleSubmit} style={{ display:'flex', flexDirection:'column', gap:'16px' }}>

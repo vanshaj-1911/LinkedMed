@@ -56,6 +56,9 @@ io.on('connection', (socket) => {
     io.to(roomId).emit('chat-message', { message, senderName, time: new Date().toLocaleTimeString() });
   });
 
+  socket.on('chat-file', ({ roomId, fileName, fileType, fileData, senderName }) => {
+    socket.to(roomId).emit('chat-file', { fileName, fileType, fileData, senderName })
+  })
   socket.on('leave-room', ({ roomId, userId }) => {
     socket.to(roomId).emit('user-left', { userId, socketId: socket.id });
     socket.leave(roomId);

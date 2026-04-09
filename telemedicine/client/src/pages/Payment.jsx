@@ -23,23 +23,30 @@ export default function Payment() {
     e.preventDefault()
     setLoading(true); setError('')
     try {
-      // Get payment intent from backend
-      const res = await api.post('/payment/create-intent', {
+      // Step 1: Create payment intent
+      const intentRes = await api.post('/payment/create-intent', {
         doctor_id: doctor.id,
         consultation_fee: doctor.consultation_fee,
         doctor_name: doctor.full_name,
         consultation_type: appointmentData?.consultation_type || 'video'
       })
-      // Confirm payment (demo mode works without real Stripe)
+
+      const paymentIntentId = intentRes.data.paymentIntentId
+      const isDemo = intentRes.data.demo
+
+      // Step 2: Confirm payment
       await api.post('/payment/confirm', {
-        payment_intent_id: res.data.paymentIntentId,
-        appointment_id: appointmentId,
-        amount: doctor.consultation_fee,
-        doctor_name: doctor.full_name
+        payment_intent_id: paymentIntentId,
+        appointment_id: appointmentId || null,
+        amount: parseFloat(doctor.consultation_fee),
+        doctor_name: doctor.full_name,
+        is_demo: isDemo
       })
+
       setStep('success')
     } catch (err) {
-      setError(err.response?.data?.message || 'Payment failed. Please try again.')
+      const msg = err.response?.data?.message || err.message || 'Payment failed. Please try again.'
+      setError(msg)
       setStep('failed')
     } finally {
       setLoading(false)

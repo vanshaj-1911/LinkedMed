@@ -83,9 +83,16 @@ async function setupDatabase() {
         appointment_date DATE NOT NULL,
         appointment_time VARCHAR(10) NOT NULL,
         consultation_type VARCHAR(20) DEFAULT 'video' CHECK (consultation_type IN ('video', 'audio', 'chat')),
-        status VARCHAR(20) DEFAULT 'pending' CHECK (status IN ('pending', 'confirmed', 'completed', 'cancelled')),
+        status VARCHAR(30) DEFAULT 'pending_approval' CHECK (status IN ('pending_approval','confirmed','completed','cancelled','rejected','refund_requested','refunded')),
         symptoms TEXT,
         notes TEXT,
+        payment_id VARCHAR(255),
+        payment_amount DECIMAL(10,2),
+        payment_status VARCHAR(20) DEFAULT 'unpaid',
+        refund_id VARCHAR(255),
+        refund_reason TEXT,
+        refund_status VARCHAR(20),
+        doctor_note TEXT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
     `);

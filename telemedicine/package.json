@@ -1,7 +1,7 @@
 {
   "name": "telemedicine-platform",
   "version": "1.0.0",
-  "description": "Telemedicine Platform For Remote Consultation - SRMS College Project",
+  "description": "Telemedicine Platform For Remote Consultation - College Project",
   "main": "server/index.js",
   "scripts": {
     "install:all": "npm install && cd client && npm install",

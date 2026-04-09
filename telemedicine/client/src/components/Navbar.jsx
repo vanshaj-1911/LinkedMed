@@ -29,7 +29,6 @@ export default function Navbar() {
       <div style={s.brand}>
         <span style={s.logo}>🏥</span>
         <Link to="/" style={s.brandText}>LinkedMed</Link>
-        <span style={s.subtitle}>INDIA</span>
       </div>
       <div style={s.links}>
         <Link to="/" style={s.link}>Home</Link>
