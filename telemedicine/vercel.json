@@ -1,4 +1,15 @@
-{
+{  
+   "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: wss: https:; worker-src 'self' blob:; connect-src 'self' https://linkedmed.onrender.com wss://linkedmed.onrender.com https:;"
+        }
+      ]
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/:path*",
