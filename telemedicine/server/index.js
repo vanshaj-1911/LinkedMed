@@ -18,11 +18,13 @@ const PORT = process.env.PORT || 5000;
 
 // Socket.IO for WebRTC signaling
 const io = new Server(server, {
-  cors: {
-    origin: ['http://localhost:3000', 'http://127.0.0.1:3000'],
-    methods: ['GET', 'POST'],
-    credentials: true
-  }
+  cors:{
+  origin: [
+    'http://localhost:3000',
+    process.env.CLIENT_URL
+  ],
+  credentials: true
+}
 });
 
 // Track active rooms
