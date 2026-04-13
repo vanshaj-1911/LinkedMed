@@ -94,9 +94,10 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Telemedicine API running', features: ['auth','doctors','appointments','prescriptions','payment','video-webrtc'], timestamp: new Date() });
 });
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-  app.get('*', (req, res) => res.sendFile(path.join(__dirname, '../client/build/index.html')));
+if (process.env.NODE_ENV === 'production' && process.env.SERVE_FRONTEND === 'true') {
+  const distPath = path.join(__dirname, '../client/dist');
+  app.use(express.static(distPath));
+  app.get('*', (req, res) => res.sendFile(path.join(distPath, 'index.html')));
 }
 
 server.listen(PORT, () => {
